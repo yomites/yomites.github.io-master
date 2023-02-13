@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ff9348dc69.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" media="screen and 
+    (max-width: 768px)" href="../styles/mobile.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <title>HobbiesGrid | Simple Calculator</title>
+</head>
+
+<body onload="init();">
+    <nav id="main-nav">
+        <div class="container">
+            <img src="../media/logo.png" alt="Logo" class="logo">
+            <div class="social">
+                <a href="https://www.instagram.com/yomites4real/" target="_blank">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <a href="https://www.facebook.com/orry.oladele" target="_blank">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/oriyomi-oladele-76316863/" target="_blank">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/yomites" target="_blank">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="article">
+        <div class="container">
+            <div class="page-container">
+                <article>
+                    <img src="../media/articles/cal.png" alt="Calculator image">
+                    <h1 class="l-heading">A simple calculator for performing addition, subtraction, division and multiplication operations</h1>
+                    <div>
+                        <small>
+                            <i class="fas fa-user"></i> Developed By Oriyomi Oladele - December 12, 
+                            2022
+                        </small>
+                        <div class="category category-tools">Tools</div>
+                    </div>
+                    <!-- Element div for the form having inputs for the
+                    first number, calculation sign and second number -->
+                    <div id="inputs">
+                        <!-- Event onchange is used to call function
+                        calculateValue(first, sign, second) when the value in either of the
+                        input fields is changed. The parameters are taken from the
+                        input fields.
+                         -->
+                        <form 
+                            onchange=
+                            "calculateValue(document.getElementById('first').value,
+                            document.getElementById('signs').value,
+                            document.getElementById('second').value);">
+        
+                            <input type="number" id="first" name="formFirstValue"
+                                value="0"><br>
+
+                            <select name="formSigns" id="signs">
+                                <option value='+'>+</option>
+                                <option value='-'>-</option>
+                                <option value='*'>*</option>
+                                <option value='/'>/</option>
+                            </select><br>
+
+                            <input type="number" id="second" name="formSecondValue"
+                                value="0">
+                        </form>
+                    </div>
+                    <div id="calculatedValue">
+                        <p>JavaScript is disabled or something went wrong</p>
+                    </div>
+                    <div id="minAndMaxCal"></div>
+                        <!-- Element div for the form having the radio button for setting
+                        saving to "No" (default) and "Yes".
+                        -->
+                    <div id="saveSetting">
+                        <!-- Event onchange is used to call function store(setting) when
+                        the checked radio button changes. The parameter setting is 
+                        true if "Yes" is checked and false otherwise.
+                        -->
+                        <form onchange="store(document.getElementById('yes').checked);">
+                            <p>Save the data?</p>
+                            <label for="no">No</label>
+                            <input type="radio" id="no" name="setting" value="No">
+
+                            <label for="yes">Yes</label>
+                            <input type="radio" id="yes" name="setting" value="Yes">
+                        </form>
+                    </div>
+                </article>
+                <!-- JavaScript functions are in a separate file (temp.js) -->
+                <script src="../javascripts/cal.js">
+                </script>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="main-footer" class="py-1">
+        <div class="container footer-container">
+            <div>
+                <p>
+                    &copy; Oriyomi Oladele 2022. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

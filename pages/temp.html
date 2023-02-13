@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ff9348dc69.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" media="screen and 
+    (max-width: 768px)" href="../styles/mobile.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <title>HobbiesGrid | Temperature Converter</title>
+</head>
+
+<body onload="convertTemp(document.getElementById('temp').value);">
+    <nav id="main-nav">
+        <div class="container">
+            <img src="../media/logo.png" alt="logo image" class="logo">
+            <div class="social">
+                <a href="https://www.instagram.com/yomites4real/" target="_blank">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <a href="https://www.facebook.com/orry.oladele" target="_blank">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/oriyomi-oladele-76316863/" target="_blank">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/yomites" target="_blank">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="article">
+        <div class="container">
+            <div class="page-container">
+                <article>
+                    <img src="../media/articles/temp_converter.png" alt="Temperature converter image">
+                    <h1 class="l-heading">A simple temperature converter (°C - °F) and (°F - °C)</h1>
+                    <div>
+                        <small>
+                            <i class="fas fa-user"></i> Developed By Oriyomi Oladele - December 12, 
+                            2022
+                        </small>
+                        <div class="category category-tools">Tools</div>
+                    </div>
+                    <div>
+                        <!-- On every click (onchange) the form reloads the current calculated temperature conversion-->
+                        <form onchange="convertTemp(document.getElementById('temp').value);">
+                            <input type="radio" id="degreestofahrenheits" name="converter" value="Degrees" checked>
+                            <label for="degreestofahrenheits">Degrees to Fahrenheits</label><br>
+                            <input type="radio" id="fahrenheitstodegrees" name="converter" value="Kelvin">
+                            <label for="fahrenheitstodegrees">Fahrenheits to Degrees</label><br>           
+                            <input type="number" id="temp" name="formTempValue"
+                                value="0">
+                        </form>
+                    </div>
+                    <div id="calculatedValue">
+                        <p>JavaScript is disabled or something went wrong</p>
+                    </div>
+                </article>
+                <!-- JavaScript functions are in a separate file (temp.js) -->
+                <script src="../javascripts/temp.js">
+                </script>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="main-footer" class="py-1">
+        <div class="container footer-container">
+            <div>
+                <p>
+                    &copy; Oriyomi Oladele 2022. All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
